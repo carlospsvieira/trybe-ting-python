@@ -1,17 +1,13 @@
 def exists_word(word, instance):
     result = []
 
-    # Iterate over the files in the queue
     for file in instance:
         occurrences = []
 
-        # Iterate over the lines in the file
         for i, line in enumerate(file["linhas_do_arquivo"], start=1):
-            # Check if the word exists in the line (case insensitive)
             if word.lower() in line.lower():
                 occurrences.append({"linha": i})
 
-        # If occurrences were found in the file, add the file information to the result
         if occurrences:
             result.append(
                 {
